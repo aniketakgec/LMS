@@ -1,0 +1,40 @@
+.bx {
+padding-left:5%;
+	}
+.box{
+	
+	padding-right:4%;
+}
+
+
+.bx select{
+ align:center;
+	width:40%;
+	padding: 4px;
+background-color:#ccc;
+
+
+}	
+.bx div input{
+	 align:center;
+	width:40%;
+	padding: 4px;
+background-color:#E8CECB;}
+
+.btn{
+	padding:5px;
+	border-radius:6px}
+	.bx div input:last-child{
+	 align:center;
+	width:40%;
+	padding: 4px;
+background-color:#F5ABF1;}
+.btn:hover{
+	background-color:#968E8D;}
+	
+	.bx div select{
+	 align:center;
+	width:40%;
+	padding: 4px;
+background-color:#E8CECB;}
+
