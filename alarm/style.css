@@ -1,0 +1,27 @@
+
+html {
+    padding-top:50px;
+    padding-left: 40%;
+}
+h1{
+    font-family: cursive;
+}
+# alarm {
+   
+    text-align:center;
+    font-family: Verdana;
+}
+label{
+    display:inline-block;
+
+}
+#setButton {
+    float:left;
+    background-color:#ccc;
+    margin-top:10px;
+    border-radius: 5px;
+}
+
+body{
+    background-color: darkslategray;
+}
