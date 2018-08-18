@@ -14,7 +14,7 @@ img{
 <body>
 <header>
      <nav>
-             <div class"main-wrapper"> 
+             <div class="main-wrapper"> 
 			   
 				  <div class="nav-login">
                        <?php
