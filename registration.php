@@ -41,7 +41,7 @@ $pwd=$_POST['pwd'];
 	$result1=mysqli_fetch_assoc($data1);
 	if($result1)
 {	
-	$query="insert into student_registration(ID,STUDENT_NO,PASSWORD,ROOM) values('','$student_no','$pwd','$room','')";
+	$query="insert into student_registration(ID,STUDENT_NO,PASSWORD,TYPE,LEADER) values('','$student_no','$pwd','$room','')";
 	$data=mysqli_query($conn,$query);
 	if($data)
 	{

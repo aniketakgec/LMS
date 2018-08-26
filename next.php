@@ -31,8 +31,10 @@ while($result1=mysqli_fetch_assoc($data1))
       $select.='<option value="'.$result1['ID'].'">'.$result1['STUDENT_NO'].'</option>';
   }
 $select.='</select>';
+
 echo "partner1";
 echo $select;
+
 	}	
 else
 {	

@@ -33,9 +33,22 @@ if(isset($_POST['login']))
 	
 		if($result)
 		{
+			$leader=$result['LEADER'];
+			if($leader==1)
+			{
+				echo "you have already choosen your partners";
+			}
+			if($leader==2)
+			{
+				echo "you are not eligible to login ask your leader to log in";
+			}
+		else if($leader==0)
+		{
 		session_start();
+			$_SESSION['type']=$result['TYPE'];
+			$type=$_SESSION['type'];
 		$_SESSION['sid']=$sid;
-		$_SESSION['type']=$result['TYPE'];
+	
 		$query1="select * from student_details where student_no='$sid'";
 $data1=mysqli_query($conn,$query1);
 $result1=mysqli_fetch_assoc($data1);
@@ -46,31 +59,41 @@ if($data1)
 	$_SESSION['name']=$result1['NAME'];
 	$_SESSION['gender']=$gender;
 	$_SESSION['year']=$year;
-	echo $_SESSION['name'];
-	echo $gender;
-	echo $year;
 	
-	$query2="update student_registration set LEADER='1' where STUDENT_NO=$sid";
-	$data2=mysqli_query($conn,$query);
-	if($data2)
-	{
+	
+		if($type=='double')
+	 {
+			header("location:double.php");
+	 }
+	if($type=='single')
+	 {
+		 $query3="insert into login values('','$sid','','')";
+		$data3=mysqli_query($conn,$query3);
+		if($data3)
+			echo $sid." "."is the leader";
+		else
+			echo mysqli_error($conn);
 		echo "you are the leader";
-		header("location:next.php");
-	}
-else
-{
-	echo mysqli_error($conn);
-}
+	 }
+	 if($type=='triple')
+	 {
+		 header("location:triple.php");
+	 }
+	
+
 }
 else
 {
 	echo mysqli_error($conn);
 }	
 		}
-	else
+		
+	
+		}	
+		else
 	{
 		echo "no data found";
 	}
-	}
+}
 }
 ?>
